@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vv小助后台管理</title>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_20no9eyvdomholxr.css">
+    <script>
+        $(function(){
+            document.getElementById("user").onclick=function(){
+                this.value="";
+            }
+            document.getElementById("pass").onclick=function(){
+                this.value="";
+            }
+            document.getElementById("login").onclick=function(){
+                this.style.background="#55A2A0";
+            }
+            document.getElementById('user').onblur=function(){
+                var user=document.getElementById('user').value;
+                if(user.length==10){
+                    $.ajax('/login/selectWorker',{
+                        type:"post",
+                        data:{username:user},
+                        success:function(e){
+                            if(e=='noPromise'){
+                                document.getElementById('user').value='';
+                                alert('您没有管理员权限');
+                            }else{}
+                        }
+                    })
+                }
+            }
+        })
+
+    </script>
+</head>
+<body>
+<form action="/login/check" method="post">
+    <p>vv小助后台登陆</p><br/>
+    <p>
+        <i class="iconfont icon-user" style="font-size: 16px;color: #666;margin-right: 10px;"></i>
+        <input id="user" type="text" name="username" value="用户名">
+    </p>
+    <p>
+        <i class="iconfont icon-mima" style="font-size: 16px;color: #666;margin-right: 10px"></i>
+        <input id="pass" type="password" name="password" value="密码">
+    </p>
+    <p><input type="submit" value="登 陆" id="login"></p>
+</form>
+</body>
+</html>

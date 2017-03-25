@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vv小助后台管理系统</title>
+    <script src="/js/jquery.js"></script>
+    <script src="/layui/layui.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="/layui/css/layui.css"/>
+    <link rel=stylesheet" href="/css/style.css"/>
+    <script>
+        $(function(){
+            $("#addWorkerForm").validate({
+                rules:{
+                    username:{
+                        required:true,
+                        digits:true,
+                        maxlength:10,
+                        minlength:10
+                    },
+                    email:{
+                        required:true,
+                        email:true
+                    },
+                    workername:"required",
+                    phone:{
+                        required:true,
+                        digits:true,
+                        maxlength:11,
+                        minlength:11
+                    }
+                }
+            })
+        })
+        var state=$("#session").value;
+        if(state=='1'){
+            $(".stateInput")[0].disabled();
+        }
+    </script>
+    <style>
+        .layui-form-item label:nth-child(2){
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<blockquote class="layui-elem-quote" style="font-size: 16px;color:#009688">
+    -------------------添加员工信息-------------------
+</blockquote>
+<form class="layui-form" id="addWorkerForm" action="/worker/addWorkerTodb" method="post" style="margin-top: -2px;border-left: 5px solid #009688">
+    <div class="layui-form-item">
+        <label class="layui-form-label">员工工号</label>
+        <div class="layui-input-block">
+            <input type="text" id="username" onblur="checkSame()" name="username"  placeholder="请输入员工工号" autocomplete="off" class="layui-input" style="width: 400px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">员工姓名</label>
+        <div class="layui-input-block">
+            <input type="text" id="workername" name="workername"  placeholder="请输入员工姓名" autocomplete="off" class="layui-input" style="width: 400px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">邮箱</label>
+        <div class="layui-input-block">
+            <input type="text"  name="email"  placeholder="请输入邮箱" autocomplete="off" class="layui-input" style="width: 400px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系电话</label>
+        <div class="layui-input-block">
+            <input type="text" id="phone" name="phone"  placeholder="请输入联系电话" autocomplete="off" class="layui-input" style="width: 400px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户类型</label>
+        <div class="layui-input-block">
+            <input type="radio" name="state" value="0" title="普通用户" checked="">
+            <input class="stateInput"  type="radio" name="state" value="1" title="管理员">
+            <input disabled type="radio" name="state" value="2" title="超级管理员">
+        </div>
+    </div>
+    <div class="layui-input-block">
+        <button class="layui-btn">添加用户</button>
+    </div>
+    <input type="hidden" value="<%=sessionData%>" id="state">
+</form>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form()
+                ,layer = layui.layer
+                ,layedit = layui.layedit
+                ,laydate = layui.laydate;
+    });
+    /*ajax请求获取所有员工信息,判断是所输入的工号是否已经存在*/
+    function checkSame(){
+        var username=document.getElementById("username");
+        if(username.value.length==10){
+            $.ajax('/worker/selectWorker',{
+                type:"post",
+                success:function(e){
+                    e.forEach(function(obj,index){
+                        if(username.value==obj){
+                          alert("该用户已存在,请重新输入");
+                          username.value="";
+                          return;
+                        }
+                    })
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>

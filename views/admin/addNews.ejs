@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>vv小助后台管理系统</title>
+    <script src="/js/jquery.js"></script>
+    <script src="/layui/layui.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="/layui/css/layui.css"/>
+    <link rel=stylesheet" href="/css/style.css"/>
+    <script>
+        $(function(){
+            $("#addNewsForm").validate({
+                rules:{
+                    title:{
+                        required:true,
+                        maxlength:100
+                    },
+                    con:"required",
+                }
+            })
+        })
+    </script>
+    <style>
+        .layui-form-item label:nth-child(2){
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<blockquote class="layui-elem-quote" style="font-size: 16px;color:#009688">
+    -------------------添加文章-------------------
+</blockquote>
+<form class="layui-form" id="addNewsForm" action="/news/addNewsTodb" method="post" style="margin-top: -2px;border-left: 5px solid #009688">
+    <div class="layui-form-item">
+        <label class="layui-form-label">文章标题</label>
+        <div class="layui-input-block">
+            <textarea id="title"  name="title"  placeholder="请输入文章标题" autocomplete="off" class="layui-textarea" style="width: 80%"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">文章内容</label>
+        <div class="layui-input-block">
+            <textarea id="con" name="con"  placeholder="文章内容" autocomplete="off" class="layui-textarea" style="width: 80%"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">推荐位</label>
+        <div class="layui-input-block">
+            <input type="radio" name="pos" value="0" title="普通文章" checked="">
+            <input class="stateInput"  type="radio" name="pos" value="1" title="轮播">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图片地址</label>
+        <input class="layui-form-input" name="imgUrl" type="text" value="图片地址" style="background: #fff;width: 200px;height: 30px;border: 1px solid #E6E6E6"/>
+    </div>
+    <div class="layui-input-block">
+        <button class="layui-btn">添加文章</button>
+    </div>
+</form>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form()
+                ,layer = layui.layer
+                ,layedit = layui.layedit
+                ,laydate = layui.laydate;
+    });
+    /*ajax请求获取所有员工信息,判断是所输入的工号是否已经存在*/
+    function checkSame(){
+        var username=document.getElementById("username");
+        if(username.value.length==10){
+            $.ajax('/worker/selectWorker',{
+                type:"post",
+                success:function(e){
+                    e.forEach(function(obj,index){
+                        if(username.value==obj){
+                            alert("该用户已存在,请重新输入");
+                            username.value="";
+                            return;
+                        }
+                    })
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>

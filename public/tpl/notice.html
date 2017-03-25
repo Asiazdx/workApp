@@ -1,0 +1,15 @@
+<header id="phoneHead">
+    公告
+</header>
+<div ng-controller="notice" id="noticeCon" style="position: absolute;left:0;right:0;margin:0 auto;top: 60px;width: 100%">
+    <ul>
+        <li ng-repeat="item in notice" style="width: 100%;padding:10px;font-size: 18px;color:#666;border-bottom:1px solid #00B7FF">
+            <h1 style="font-size: 18px;color: #222;font-weight: 600">{{item.title}}</h1>
+            <div style="width: 100%;font-size:14px;color: #333">
+                {{item.con}}
+                <span style="color: #01AAED">{{item.time}}</span>
+            </div>
+            <!--<span style="display: block;height:20px;font-size: 16px;float: right;text-align: center;line-height: 20px;background: red">{{item.time}}</span>-->
+        </li>
+    </ul>
+</div>

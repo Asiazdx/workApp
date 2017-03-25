@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/index/mui.min.css">
+    <title>vv小助</title>
+    <style>
+        @font-face {
+            font-family: 'iconfont';  /* project id 226054 */
+            src: url('//at.alicdn.com/t/font_f65osuqdufm6ajor.eot');
+            src: url('//at.alicdn.com/t/font_f65osuqdufm6ajor.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_f65osuqdufm6ajor.woff') format('woff'),
+            url('//at.alicdn.com/t/font_f65osuqdufm6ajor.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_f65osuqdufm6ajor.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:16px;font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height:100%;
+            background-image: url('indexImg/login.png');
+            background-size: 100%;
+        }
+        header{
+            width: 100%;
+            height: 40px;
+            /*background: yellow;*/
+        }
+        #form{
+            width:324px;
+            height: 380px;
+            margin: 0 auto;
+            margin-top: 60px;
+            /*border: 1px solid #000;*/
+            position: relative;
+            background: #fff;
+            opacity: 0.7;
+        }
+        #form .head{
+            position: absolute;
+            left:0;
+            right: 0;
+            margin:0 auto;
+            top: -60px;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-image: url('indexImg/tox.jpg');
+            background-size:contain;
+            background-position: center;
+            opacity: 1;
+        }
+        #form .title{
+            width: 100%;
+            height: 90px;
+            margin: 0 auto;
+            font-size: 24px;
+            text-align: center;
+            line-height: 130px;
+            color: #fff;
+            /*background: red;*/
+            opacity: 1;
+        }
+        /*用户名*/
+        #form .username{
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 120px;
+            width: 90%;
+            height: 45px;
+            border-radius: 30px;
+            background: #B1DADE;
+            box-sizing: border-box;
+            padding-left: 10px;
+            outline: none;
+            opacity: 1;
+        }
+        #form .username span{
+            display: block;
+            text-align: center;
+            line-height: 45px;
+            float: left;
+            width: 45px;
+            height: 45px;
+            margin-left:0;
+        }
+        #form .username input{
+            float: left;
+            width: 200px;
+            height: 44px;
+            background:transparent;
+            border: 0;
+        }
+        /*密码*/
+        #form .password{
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 200px;
+            width: 90%;
+            height: 45px;
+            border-radius: 30px;
+            background: #B1DADE;
+            box-sizing: border-box;
+            padding-left: 10px;
+            border: 0;
+            outline: none;
+            opacity: 1;
+        }
+        #form .password span{
+            display: block;
+            width: 45px;
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+            float: left;
+            margin-left: 0;
+        }
+        #form .password input{
+            float: left;
+            width: 200px;
+            height: 44px;
+            background:transparent;
+            border: 0;
+        }
+        /*登陆*/
+        #form .submit{
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 320px;
+            width: 90%;
+            height: 45px;
+            border-radius: 30px;
+            opacity: 1;
+        }
+        #form .submit input{
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 30px;
+            background: #E2385D;
+            font-size: 20px;
+            color: #fff;
+        }
+        #form .submit input:hover{
+            background:#E3274B;
+            font-size: 18px;
+            outline: none;
+        }
+        .noLogin{
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 30px;
+            top: 270px;
+            opacity: 1;
+        }
+        .noLogin .mui-switch{
+            width:100%;
+            height: 100%;
+        }
+        .noLogin span{
+           display: block;  float: left;  position: absolute;
+            margin-left: 15%;
+            font-size:15px;
+            color: #666;
+        }
+    </style>
+    <script>
+       window.onload=function(){
+           var user=document.getElementsByClassName("user")[0];
+           var pass=document.getElementsByClassName("pass")[0];
+           var sub=document.getElementsByClassName("sub")[0];
+           user.onclick=function(){
+               this.value="";
+               this.style.outline="none";
+               this.style.fontSize="20px";
+           }
+           pass.onclick=function(){
+               this.value="";
+               this.style.outline="none";
+               this.style.fontSize="20px";
+           }
+
+           document.getElementById("mySwitch").addEventListener("toggle",function(event){
+               var hidden=$("#hidden");
+               if(event.detail.isActive){
+                   hidden.val("yes");
+               }else{
+                   hidden.val("no");
+               }
+           })
+       }
+    </script>
+</head>
+<body>
+<header>
+    <div>
+        <!--<span ng-click="back()">back</span>-->
+    </div>
+</header>
+<div id="form">
+    <form action="/indexLogin/check" method="post">
+        <div class="head">
+        </div>
+        <div class="title">vv小助</div>
+        <p class="username">
+            <span><i class="iconfont" style="font-size: 24px;color:#666">&#xe6aa;</i></span>
+            <input type="text" name="name" value="用户名" class="user"/>
+        </p>
+        <p class="password">
+            <span><i class="iconfont" style="font-size: 24px;color:#666">&#xe65e;</i></span>
+            <input type="password" name="pass" value="login" class="pass">
+        </p>
+        <div class="noLogin">
+            <span>一周之内免登陆</span>
+            <div id="mySwitch" class="mui-switch mui-switch-blue" style="height: 30px;width: 80px; float: right;margin-right: 15%">
+                <div class="mui-switch-handle"></div>
+                <input type="hidden" value="" id="hidden" name="cookieData">
+            </div>
+        </div>
+        <p class="submit">
+            <input type="submit" value="login" class="sub">
+        </p>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<style>
+    .view-animate {
+        transition:top ease 1s;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        width:100%;
+        position:absolute;
+        top:0;
+    }
+    .view-animate.ng-enter {
+        top: 100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        top: 0;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        top:-100%;
+    }
+</style>
+<header id="phoneHead">
+    通讯录
+</header>
+<div ng-controller="phone" id="phoneCon">
+    <!--搜索-->
+   <div id="search" class="mui-input-row mui-search" style="height: 36px">
+        <input id="phoneSearch" type="search" class="mui-input-clear" placeholder="" data-input-clear="15" data-input-search="15" ng-model="search">
+        <span class="mui-placeholder">
+            <span class="mui-icon mui-icon-search" style="font-size: 24px;color:#5AB2F0"></span>
+        </span>
+   </div>
+    <!--联系人-->
+    <ul id="lianxi">
+        <li id="chatHome">
+           <a>
+               <div class="chatImg">
+                   <img src="" alt="图片不存在" border="0" width="100%" height="100%" >
+               </div>
+              <span>聊天室</span>
+           </a>
+        </li>
+        <li ng-repeat="item in data | filter:{en:search}">
+           <div class="enName">{{item.en}}</div>
+            <ul class="mui-table-view" id="phoneList">
+                <li ng-repeat="obj in item " class="mui-table-view-cell workers">
+                    <a class="workerList" href="/#!/worker/:{{obj.id}}">
+                        <div class="chatImg">
+                            <img src="" alt="图像不存在">
+                        </div>
+                        <span>{{obj.workername}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li style="width: 100%;height: 50px"></li>
+    </ul>
+    <div id="en">
+        <div id="top" ng-click="top()">↑</div>
+        <div ng-repeat="item in data" ng-click="filter(item.en)">
+            {{item.en}}
+        </div>
+    </div>
+</div>

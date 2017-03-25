@@ -1,0 +1,49 @@
+#chatHeader{
+    width: 100%;
+    height: 60px;
+    background: #5AB2F0;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+#chatHeader .box1{
+   position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin:auto;
+   width: 60px;
+   height: 100%;
+    text-align: center;
+}
+#chatHeader .box2{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: red;
+}
+#chat{
+    position: absolute;
+    width: 100%;
+    top: 61px;
+}
+#chat ul li{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #666;
+}
+
+
+
+
+

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>vv小助</title>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.animate.min.js"></script>
+    <script src="js/angular/angular.min.js"></script>
+    <script src="js/angular-route/angular-route.min.js"></script>
+    <script src="js/angular-animate/angular-animate.min.js"></script>
+    <script src="js/socket.io-client/dist/socket.io.js"></script>
+    <script src="js/index/routes.js"></script>
+    <script src="js/index/controllers.js"></script>
+    <script src="js/index/services.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/index/style.css">
+    <link rel="stylesheet" href="css/index/swiper.min.css">
+    <link rel="stylesheet" href="css/index/mui.min.css">
+    <link rel="stylesheet" href="css/index/index.css">
+    <link rel="stylesheet" href="css/index/todo.css">
+    <link rel="stylesheet" href="css/index/news.css">
+    <link rel="stylesheet" href="css/index/phone.css">
+    <link rel="stylesheet" href="css/index/chat.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_20no9eyvdomholxr.css">
+</head>
+<body ng-app="myapp"  style="background: #DEDEDE">
+<div ng-view class="view-animate">
+
+</div>
+<nav class="mui-bar mui-bar-tab" style="background:#fff">
+    <a class="mui-tab-item mui-active" style="height:100%;" href="#!/">
+        <span style="display: block;text-align: center;height: 30px;line-height: 36px">
+           <i class="iconfont icon-shouye_shouye" style="font-size: 24px"></i>
+        </span>
+        <span style="font-size: 14px">首页</span>
+    </a>
+    <a class="mui-tab-item" style="height:46px;" href="#!/phone">
+        <span style="display: block;text-align: center;height: 30px;line-height: 36px">
+            <i class="iconfont icon-dianhua" style="font-size: 24px"></i>
+        </span>
+        <span style="font-size: 14px">电话</span>
+    </a>
+    <a class="mui-tab-item" style="height:46px;" href="#!/liaotian">
+         <span style="display: block;text-align: center;height: 30px;line-height: 36px">
+            <i class="iconfont icon-liaotian" style="font-size: 24px"></i>
+        </span>
+        <span style="font-size: 14px">聊天</span>
+    </a>
+    <a class="mui-tab-item" style="height: 46px;" href="#!/todo">
+        <span style="display: block;text-align: center;height: 30px;line-height: 36px">
+            <i class="iconfont icon-beiwanglu" style="font-size: 24px"></i>
+        </span>
+        <span style="font-size: 14px">备忘录</span>
+    </a>
+</nav>
+</body>
+</html>

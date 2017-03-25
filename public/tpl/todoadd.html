@@ -1,0 +1,54 @@
+<style>
+    .view-animate {
+        transition:top ease 1s;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        width:100%;
+        position:absolute;
+        top:0;
+    }
+    .view-animate.ng-enter {
+        top: 100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+       top: 0;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        top:-100%;
+    }
+</style>
+<header class="mui-bar mui-bar-nav" id="todoadd-head">
+    <a href="#!/todo" style="display: inline-block;width: 50px;height: 50px;float: left;text-align: center;line-height: 50px">
+       <i class="iconfont icon-fanhui" style="color:#fff;font-size: 30px"></i>
+    </a>
+    <a class="mui-pull-left" ng-click="save()" id="todoadd-a1">
+      <i class="iconfont icon-wancheng" style="font-size: 20px;color: #fff"></i>
+        <span style="color: #fff">完成</span>
+    </a>
+    <a class="mui-pull-right" ng-click="close()" id="todoadd-a2">
+        <i class="iconfont icon-quxiao" style="font-size: 20px;color: #fff"></i>
+        <span style="color: #fff">取消</span>
+    </a>
+</header>
+<div class="mui-content">
+   <div class="todocon" contenteditable="true" id="todocon">
+   </div>
+    <span id="todoadd-span"></span>
+</div>
+<footer id="todoadd-foot">
+    <div id="fenlei" ng-click="flistShow()">
+        未分类
+     <span>
+         <i class="iconfont icon-fenlei" style="font-size: 30px;color: #1BA8D8"></i>
+     </span>
+        <div id="fenlei-list">
+            <ul>
+                <li ng-click="select1()">未分类</li>
+                <li ng-click="select2()">工作事项</li>
+                <li ng-click="select3()">学习事项</li>
+                <li ng-click="select4()">个人事项</li>
+                <li ng-click="select5()">家庭事项</li>
+            </ul>
+        </div>
+    </div>
+</footer>

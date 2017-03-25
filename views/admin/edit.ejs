@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vv小助后台管理</title>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/layui/layui.js">
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+        h1{
+            width: 100%;
+            height: 50px;
+            text-align: left;
+            line-height:50px;
+            font-size:18px;
+            font-weight: 400;
+            color: #009688;
+            background:#F2F2F2;
+            padding-left: 10px;
+        }
+        .save{
+            float: left;
+            color: deepskyblue;
+            height: 100%;
+            width: 60px;
+            text-align: left;
+        }
+        .save:hover{
+            cursor: pointer;
+        }
+        .delete{
+            float: left;
+            color: red;
+            height: 100%;
+            width: 40px;
+            text-align: center;
+        }
+        .delete:hover{
+            cursor: pointer;
+        }
+        .resetPass{
+            float: left;
+            cursor: pointer;
+            width: 120px;
+            color: blue;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            var save=document.getElementById('save');
+            var del=document.getElementById("delete");
+            //保存修改信息
+            $(".option").delegate(".save",'click',function(){
+                var item=$(this).parent('td').attr('id');
+                var username=item;
+                var workername=$(this).parent('td').parent('tr').find(".workername").text();
+                var phone=$(this).parent('td').parent('tr').find(".phone").text();
+                var email=$(this).parent('td').parent('tr').find(".email").text();
+                $.ajax('/worker/updateUser',{
+                    type:'post',
+                    data:{
+                        username:username,
+                        workername:workername,
+                        phone:phone,
+                        email:email
+                    },
+                    success:function(e){
+                        if(e=='ok'){
+                            alert('修改成功');
+                        }
+                    }
+                })
+
+            })
+            //重置密码
+            $(".option").delegate(".resetPass",'click',function(){
+                   var item=$(this).parent('td').attr('id');
+                   var username=item;
+                   $.ajax('/worker/resetPass',{
+                       type:"post",
+                       data:{username:username},
+                       success:function(e){
+                           if(e=='ok'){
+                               alert('重置密码成功');
+                           }
+                       }
+                   })
+               })
+            $(".option").delegate(".delete",'click',function(){
+                var item=$(this).parent('td').attr('id');
+                var username=item;
+                if(confirm("确定要删除吗")){
+                    $.ajax('/worker/del',{
+                        type:'post',
+                        data:{
+                            username:username
+                        },
+                        success:function(e){
+                            if(e=="ok"){
+                                alert('删除成员成功');
+                                location.reload();
+                            }
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+
+</head>
+<body>
+<h1>-----------员工信息表----------</h1>
+<table id="tab" class="layui-table" style="margin-top:0;width:1140px;text-align: center">
+    <thead>
+    <tr style="background:#989595">
+        <th>工号</th>
+        <th>员工姓名</th>
+        <th>联系电话</th>
+        <th>邮件</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%data.forEach(function(obj,index){%>
+    <tr>
+        <td><%=obj.username%></td>
+        <td contenteditable="true" class="workername"><%=obj.workername%></td>
+        <td contenteditable="true" class="phone"><%=obj.phone%></td>
+        <td contenteditable="true" class="email"><%=obj.email%></td>
+        <td class="option" id="<%=obj.username%>"><div class="resetPass">重置密码</div><div class="save">保存</div><div class="delete">删除</div></td>
+    </tr>
+    <%})%>
+    </tbody>
+</table>
+</body>
+</html>

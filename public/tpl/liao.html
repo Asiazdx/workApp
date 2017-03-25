@@ -1,0 +1,9 @@
+
+<ul class="history" style="width:100%;height:200px;border:1px solid red;overflow: auto">
+    <li ng-repeat="item in message">
+        <span>{{item.self}}</span>
+        <span>{{item.text}}</span>
+    </li>
+</ul>
+<textarea name="" id="" cols="30" rows="10"></textarea>
+<input type="button" value="发送" ng-click="click()">

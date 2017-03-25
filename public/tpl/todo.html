@@ -1,0 +1,41 @@
+<header class="mui-bar mui-bar-nav" id="todo-head">
+    <a href="#!/"  id="todo-back">
+        <i class="iconfont icon-fanhui" style="font-size: 30px;color: #fff;"></i>
+    </a>
+    <h1 class="mui-title" style="width: 60%;height:100% ;margin: 0 auto;margin-top: 10px;font-size: 20px;color: #fff">vv便签</h1>
+    <span style="display: block;margin-top: 10px;font-size: 16px" id="dataNum">{{dataNum}}</span>
+</header>
+<div class="mui-content">
+    <ul class="mui-table-view" id="todoList">
+        <div class="message" ng-show="data.length==0">
+            没有任何便签,请您添加
+        </div>
+        <li class="mui-table-view-cell list{{item.id}}" style="position: relative;width: 100%;height: 50px; box-sizing: border-box; margin-bottom: 5px" ng-repeat="item in data track by item.id">
+            <a style="display: inline-block;overflow: hidden;height: 50px" href="#!/edit/{{item.id}}">
+                <span style="display: block;float: left;">{{item.con|limitTo:20}}...</span>
+                <span style="width:100px;height: 30px;text-align: left;font-size: 14px; color: #666;display: block;float: left;margin-left: 20px;">{{item.time}}</span>
+                <span class="hiddenList" id="span{{item.id}}" style="display: none">{{item.fenlei}}</span>
+            </a>
+            <span style="position: absolute;right:10px;" ng-click="del(item.id)"> <i class="iconfont icon-shanchu" style="font-size: 24px;color: #3b3b3b "></i></span>
+            <!--<span style="position: absolute;right:10px"></span>-->
+           <!-- <div style="position: absolute;top:5px;right:10px;width:40px;height:40px;margin-bottom: 30px;border:1px solid #333" ng-click="del(item.id)">
+                    <img alt="404" src="indexImg/bk.png" width="100%" height="100%">
+            </div>-->
+        </li>
+    </ul>
+</div>
+<footer>
+   <a href="#!/todo/add" style="display: block;width:50px;height: 50px;float: left;text-align: center;line-height: 50px">
+       <i class="iconfont icon-plus" style="font-size: 30px;color: #4b4b4b"></i>
+   </a>
+    <div style="width: 50px;height: 50px;float: right;text-align: center;line-height: 50px;" ng-click="navShow()">
+        <i class="iconfont icon-more" style="font-size: 30px;color: #4b4b4b"></i>
+    </div>
+    <ul id="navLists" style="width: 100%;background:#fff;">
+        <li ng-click="delAll()" style="width: 100%;box-sizing: border-box;border-bottom: 0.01px solid #ccc">删除所有便签</li>
+        <li ng-click="timePai()" style="width: 100%;box-sizing: border-box;border-bottom: 0.01px solid #ccc">按修改时间排序</li>
+        <li ng-click="catePai()"style="width: 100%;box-sizing: border-box;border-bottom: 0.01px solid #ccc">按分类排序</li>
+    </ul>
+</footer>
+
+

@@ -1,0 +1,184 @@
+
+.addBtn{
+    width:100%;padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    border:1px solid #ccc;
+    display: block;
+}
+.addBtn:active{
+    background: #ccc;
+}
+.message{
+    text-align: center;
+    padding:10px 0;
+}
+/*首页*/
+#h-head{
+    width: 100%;
+    height: 60px;
+    margin:0 auto;
+    background: #5AB2F0;
+    position: relative;
+}
+#h-head h1{
+    position: absolute;
+    width:100px;
+    height: 60px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+}
+#h-head .notic{
+    float: right;
+    margin-right:4%;
+    margin-top: 15px;
+    width: 60px;
+    height:30px;
+    border-radius:15px;
+    background: #F0F598;
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    position: relative;
+    font-weight: 400;
+}
+#h-head .notic span{
+    position: absolute;
+    display: block;
+    top: -2px;
+    left: 50px;
+    width:20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background:red;
+    font-size: 14px;
+    color: #fff;
+}
+/*系统公告*/
+#noticList{
+    position: absolute;
+    left: 0;
+    right:0;
+    margin: 0 auto;
+    top:70px;
+    width: 100%;
+    height:45px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    z-index: 1001;
+}
+#noticList .toux{
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 5px;
+    line-height: 50px;
+}
+#noticList .n-title{
+    position: absolute;
+    left: 55px;
+    top: 5px;
+    display: block;
+    height: 45px;
+    width:62%;
+    line-height: 50px;
+    text-align: left;
+    overflow: hidden;
+    color: #333;
+}
+#noticList .n-date{
+    display: block;
+    width: 100px;
+    height: 45px;
+    position: absolute;
+    line-height: 55px;
+    text-align: right;
+    right: 5px;
+    top: 5px;
+    font-size: 16px;
+    color: #666;
+}
+/*首页-》轮播*/
+#lunbo{
+    width: 100%;
+    height: 160px;
+    border-bottom: 1px solid #1BA8D8;
+}
+#lunbo .swiper-wrapper div{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 160px;
+}
+#lunbo .swiper-pagination{
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    height: 20px;
+}
+/*新闻列表页*/
+#newsList ul li{
+    width: 100%;
+    height:60px;
+    border-bottom: 1px solid #1E9FFF;
+    box-sizing: border-box;
+    padding: 5px;
+}
+#newsList ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#newsList ul li .imgBox{
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+#newsList ul li .con{
+    float: left;
+    margin-left: 10px;
+    height: 50px;
+    font-size: 16px;
+    width:290px;
+    color: #666;
+    overflow: hidden;
+}
+/*新闻详情页*/
+#new-header{
+    width: 100%;
+    height: 60px;
+    margin-top: 0;
+    line-height: 60px;
+    background:#1BA8D8;
+    color: #666;
+}
+#new-header h1{
+    font-size: 20px;
+}
+/*便签*/
+#todo-head{
+    width: 100%;
+    height: 60px;
+    background: #1BA8D8;
+    line-height: 60px;
+}
+#todo-back{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 10px;
+}

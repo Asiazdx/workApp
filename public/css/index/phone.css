@@ -1,0 +1,239 @@
+/*手机通讯录*/
+#phoneHead{
+    width: 100%;
+    height: 60px;
+    background: #5AB2F0;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 600;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+#phoneCon{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: top 1s ease;
+}
+#search{
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 1px solid #666;
+}
+#phoneSearch{
+    background: #fff;
+    border-radius: 0;
+    height: 36px;
+    line-height: 36px;
+}
+#lianxi{
+    position: absolute;
+    top:96px;
+    left: 0;
+    width: 100%;
+}
+#phoneList{
+    width: 100%;
+    margin-top: 0;
+}
+#phoneList li{
+    padding: 0;
+    height: 55px;
+}
+#phoneList li a{
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+}
+#chatHome{
+    width: 100%;
+    height: 55px;
+    background:#fff;
+    line-height: 60px;
+    padding-left: 10px;
+}
+#chatHome span{
+    display: block;
+    float: left;
+    height: 100%;
+    line-height: 70px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-left: 20px;
+}
+.chatImg{
+    width: 46px;
+    height: 46px;
+    float: left;
+    border-radius: 50%;
+    background: red;
+    overflow: hidden;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+#phoneList li a span{
+    display: block;
+    float: left;
+    height: 100%;
+    line-height: 70px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-left: 20px;
+}
+.enName{
+    width: 100%;
+    height: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
+}
+#en{
+    position: fixed;
+    width:20px;
+    z-index:999;
+    right:0;
+    top:96px;
+    bottom:54px;
+    text-align:center;
+    color:#999;
+}
+#en div{
+    width: 20px;
+    height: 25px;
+    text-align: center;
+    line-height: 30px;
+}
+/*联系人详细资料*/
+#workerHead{
+    width: 100%;
+    height: 60px;
+    background: #5AB2F0;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+}
+.back{
+    width: 40px;
+    height: 30px;
+    float: left;
+    margin: 15px;
+    text-align: center;
+    line-height: 30px;
+    border-right: 1px solid #fff;
+}
+.title{
+    height: 100%;
+    line-height: 50px;
+    font-size: 22px;
+    font-weight: 500;
+}
+#workerCon{
+    width:100%;
+    position: absolute;
+    top: 60px;
+    bottom: 51px;
+}
+#tag{
+    width: 100%;
+    height: 90px;
+    background: #fff;
+    margin-top: 20px;
+}
+.workerImg{
+    float: left;
+    width: 75px;
+    height: 75px;
+    margin-top: 8px;
+    margin-left:10px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: red;
+}
+
+.workerMsg{
+    float: left;
+    margin-left:20px;
+    height: 90px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+.workerMsg span:nth-child(1){
+    position: absolute;
+    display: block;
+    top: 18px;
+    text-align: left;
+}
+.workerMsg  span:nth-child(2){
+    position: absolute;
+    bottom: 20px;
+    display: block;
+}
+/*所属部门*/
+#job{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    position: absolute;
+    top: 130px;
+    line-height: 45px;
+    padding-left: 20px;
+    text-align: left;
+}
+#job span{
+    display: block;
+    float: left;
+    font-size: 16px;
+    font-weight: 500;
+    color:#333;
+}
+#job span:nth-child(2){
+    margin-left: 20px;
+}
+#call{
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    background: cornflowerblue;
+    text-align: center;
+    font-size: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 300px;
+    color:#fff;
+    line-height: 40px;
+}
+#sendEmail{
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 120px;
+    background: #fff;
+    text-align: center;
+    font-size: 20px;
+    color: #666;
+    font-weight: 500;
+    line-height: 40px;
+}
