@@ -1,42 +1,42 @@
-<style>
-    .view-animate {
-        transition:top ease 1s;
-    }
-    .view-animate.ng-enter, .view-animate.ng-leave {
-        width:100%;
-        position:absolute;
-        top:0;
-    }
-    .view-animate.ng-enter {
-        top: 100%;
-    }
-    .view-animate.ng-enter.ng-enter-active {
-        top: 0;
-    }
-    .view-animate.ng-leave.ng-leave-active {
-        top:-100%;
-    }
-    .color{
-        color:red;
-    }
-</style>
-<header class="mui-bar mui-bar-nav" id="chatHeader">
-  <div class="box1">消息</div>
-  <div class="box2"></div>
-</header>
-<div ng-controller="liaotian" id="chat">
-    <ul class="mui-table-view">
-        <li class="mui-table-view-cell" >群聊</li>
-        <!--<li class="mui-table-view-cell" >群聊</li>
-        <li class="mui-table-view-cell" ng-repeat="item in data | filter:{en:type} |filter:{en:search} track by $index ">
-            <a class="" href="{{item.url}}">
-                <span ng-class="{color:item.flag1}">{{item.name}}</span>
-            </a>
-        </li>-->
-    </ul>
-<!--<div class="en" style="position: fixed;right:10px;width:20px;z-index:999;top:95px;text-align: center;color:#aaa">
-    <div ng-repeat="item in data" ng-click="filter(item.en)">
-        {{item.en}}
-    </div>
-</div>-->
-</div>
+<!--<style>-->
+    <!--.view-animate {-->
+        <!--transition:top ease 1s;-->
+    <!--}-->
+    <!--.view-animate.ng-enter, .view-animate.ng-leave {-->
+        <!--width:100%;-->
+        <!--position:absolute;-->
+        <!--top:0;-->
+    <!--}-->
+    <!--.view-animate.ng-enter {-->
+        <!--top: 100%;-->
+    <!--}-->
+    <!--.view-animate.ng-enter.ng-enter-active {-->
+        <!--top: 0;-->
+    <!--}-->
+    <!--.view-animate.ng-leave.ng-leave-active {-->
+        <!--top:-100%;-->
+    <!--}-->
+    <!--.color{-->
+        <!--color:red;-->
+    <!--}-->
+<!--</style>-->
+<!--<header class="mui-bar mui-bar-nav" id="chatHeader">-->
+  <!--<div class="box1">消息</div>-->
+  <!--<div class="box2"></div>-->
+<!--</header>-->
+<!--<div ng-controller="liaotian" id="chat">-->
+    <!--<ul class="mui-table-view">-->
+        <!--<li class="mui-table-view-cell" >群聊</li>-->
+        <!--&lt;!&ndash;<li class="mui-table-view-cell" >群聊</li>-->
+        <!--<li class="mui-table-view-cell" ng-repeat="item in data | filter:{en:type} |filter:{en:search} track by $index ">-->
+            <!--<a class="" href="{{item.url}}">-->
+                <!--<span ng-class="{color:item.flag1}">{{item.name}}</span>-->
+            <!--</a>-->
+        <!--</li>&ndash;&gt;-->
+    <!--</ul>-->
+<!--&lt;!&ndash;<div class="en" style="position: fixed;right:10px;width:20px;z-index:999;top:95px;text-align: center;color:#aaa">-->
+    <!--<div ng-repeat="item in data" ng-click="filter(item.en)">-->
+        <!--{{item.en}}-->
+    <!--</div>-->
+<!--</div>&ndash;&gt;-->
+<!--</div>-->

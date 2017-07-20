@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require("express-session");
 var crypto=require("crypto");
-//var child=require("child_process");//引进进程模块
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
@@ -63,29 +63,29 @@ app.use('/',function(req,res,next){
     }
 } ,index);
 /*var server = require('http').createServer(app);
-//服务器  客户端
-var io = require('socket.io')(server);
-var clients={
-};
-var infos={
-};
-io.on('connection', function(client){
-    client.on("event",function(data){
-        console.log(data.id);
-        clients[data.id]=client;
-        infos[data.id]={name:data.name,id:data.id}
-        client.emit("event",infos);
-    });
-    client.on("one",function(data){
-        var id=data.id;
-        var text=data.text;
-        var self=data.self;
-        console.log(id);
-        /!*
-         * self  txt
-         * *!/
-        clients[id].emit("one",{self:self,text:text})
-    })
-});*/
+ //服务器  客户端
+ var io = require('socket.io')(server);
+ var clients={
+ };
+ var infos={
+ };
+ io.on('connection', function(client){
+ client.on("event",function(data){
+ console.log(data.id);
+ clients[data.id]=client;
+ infos[data.id]={name:data.name,id:data.id}
+ client.emit("event",infos);
+ });
+ client.on("one",function(data){
+ var id=data.id;
+ var text=data.text;
+ var self=data.self;
+ console.log(id);
+ /!*
+ * self  txt
+ * *!/
+ clients[id].emit("one",{self:self,text:text})
+ })
+ });*/
 app.listen(18080);
 
